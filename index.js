@@ -1,4 +1,4 @@
-const totalMinutes = 1441;
+const totalMinutes = 567;
 const hours = Math.floor(totalMinutes / 60);
 const minutes = totalMinutes % 60;
 const doubleDigitHours = String(hours).padStart(2, 0);
