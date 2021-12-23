@@ -93,8 +93,110 @@ console.log(welcomMsg);
 
 //нормализация строки методом  toLowerCase() - приведение к нижнему регистру
 //toUpperCase - приведение к верхнему регистру
-let brand = prompt('Давай бренд');
-brand = brand.toLowerCase();
-console.log(brand);
+//let brand = prompt('Давай бренд');
+//brand = brand.toLowerCase();
+//console.log(brand);
 
-// метод includes
+/* метод slice копирует часть слова и возвращает,
+в скобках указан индекс, с какого делается копия */
+let brand = 'SamSUnG';
+console.log(brand[4]);
+console.log(brand.slice(1).toLowerCase());
+
+brand = brand[0] + brand.slice(1).toLowerCase();
+
+console.log(brand);
+/*
+ * Поиск в строке с методом includes()
+ */
+const blacklistedWord1 = 'спам';
+const blacklistedWord2 = 'распродажа';
+
+const string1 = 'Привет, я принц Абдул, это не спам, предлагаю тебе миллион!';
+const string2 = 'Самая большая РАСПРОДАЖА этой недели, не пропустите!';
+const string3 = 'Рекламная кампания #fatlivesmatter';
+
+console.log(string1.includes(blacklistedWord1));
+console.log(string1.includes(blacklistedWord2));
+
+console.log(string2.includes(blacklistedWord1));
+
+const normalizedString2 = string2.toLowerCase();
+console.log(normalizedString2.includes(blacklistedWord2));
+
+console.log(string3.includes(blacklistedWord1));
+console.log(string3.includes(blacklistedWord2));
+
+/*
+ * Напиши скрипт который проверяет вхождение числа
+ * в отрезок обозначенный x1 и x2.
+ *
+ * - До x1
+ * - После x2
+ * - От x1 до x2
+ * - До x1 или после x2
+ */
+const x1 = 10;
+const x2 = 30;
+const number = 25;
+
+console.log(`Число ${number} попадает в отрезок до ${x1}?`, number < x1);
+console.log(`Число ${number} попадает в отрезок после ${x2}? `, number > x2);
+
+const res1 = number > x1 && number < x2;
+// number > x1 && number < x2
+// 50 > 10 && 50 < 30
+// true && false
+// false
+
+// 5 > 10 && 5 < 30
+// false && true
+// false
+
+// 15 > 10 && 15 < 30
+// true && true
+// true
+console.log(`Число ${number} попадает в отрезок от ${x1} до ${x2}? `, res1);
+
+const res2 = number < x1 || number > x2;
+
+// 150 < 10 || 150 > 30
+// false || true
+// true
+
+// 25 < 10 || 25 > 30
+// false || false
+// false
+console.log(`Число ${number} попадает в отрезок до ${x1} или после ${x2}? `, res2);
+
+/*
+ * Напиши скрипт который проверяет возможность открыть чат с пользователем.
+ * Для этого пользователь должен быть:
+ * - другом
+ * - онлайн
+ * - без режима не беспокоить
+ */
+
+const isOnline = true;
+const isFriend = true;
+const isDnd = true;
+
+const canOpenChat = isOnline && isFriend && !isDnd;
+console.log('Можно открыть чат? ', canOpenChat);
+
+/*
+ * Напиши скрипт проверки подписки пользователя при доступе к контенту
+ * - Есть три типа подписки: free, pro и vip.
+ * - Получить доступ могут только пользователи pro и vip
+ */
+
+const sub = 'free';
+
+// если пользователь pro или пользователь vip тогда есть доступ
+
+const canAccessContent = sub === 'pro' || sub === 'vip';
+// true || false => true
+// false || true => true
+// false || false => false
+
+console.log('Есть доступ к контенту? ', canAccessContent);
