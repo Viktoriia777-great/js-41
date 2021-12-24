@@ -60,11 +60,11 @@ const salary = 5000;
 
 //if (true) {
 //const a = 5;
-//console.log(b);
+//console.log(b); (ошибка)
 //}
 
 //if (true) {
 //const b = 10;
 
-//console.log(a);
+//console.log(a);(ошибка)
 //}
