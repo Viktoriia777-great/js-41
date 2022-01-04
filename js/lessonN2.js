@@ -202,23 +202,23 @@ console.log('Операция завершена');
  * «Оформляем заказ на сумму [сумма] со скидкой [скидка]%»
  */
 
-let totalSpent = 6000;
+let totalSpent = 2000;
 let payments = 500;
 let discount = 0;
 
-if (totalSpent < 100) {
-  console.log('не партнёр, скидка 0%');
-} else if (totalSpent >= 100 && totalSpent < 1000) {
+if (totalSpent >= 100 && totalSpent < 1000) {
   console.log('бронзовый партнёр, скидка 2%');
   discount = 0.02;
 } else if (totalSpent >= 1000 && totalSpent < 5000) {
   console.log('серебрянный партрёр, скидка 5%');
   discount = 0.05;
-} else {
+} else if (totalSpent >= 5000) {
   console.log('золотой партрёр, скидка 10%');
   discount = 0.1;
+} else {
+  console.log('не партнёр, скидка 0%');
 }
-
+payments -= payments * discount;
 console.log(`Оформляем заказ на сумму ${payments} со скидкой ${discount * 100}%`);
 totalSpent += payments;
 console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
