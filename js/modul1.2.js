@@ -222,3 +222,21 @@ payments -= payments * discount;
 console.log(`Оформляем заказ на сумму ${payments} со скидкой ${discount * 100}%`);
 totalSpent += payments;
 console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
+
+//Посчитаем сумму чисел до определенного значения
+const target = 3;
+let sum = 0;
+
+for (let i = 0; i <= target; i += 1) {
+  sum += i;
+  console.log(i);
+}
+
+console.log(sum);
+
+//Вспомним про операцию a % b и выведем остаток от деления используя цикл.
+const maxi = 10;
+
+for (let i = 1; i <= maxi; i += 1) {
+  console.log(`${maxi} % ${i} = `, maxi % i);
+}
