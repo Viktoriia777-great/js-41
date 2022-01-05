@@ -156,3 +156,31 @@ for (let i = 0; i < matrix.length; i += 1) {
 }
 
 console.log(total); // 45
+
+//Методы split() и join()
+/*split(s) — позволяет превратить строку в массив, разбив ее по разделителю s. 
+Это не метод массива, но рассматриваем мы его сейчас, так как раньше мы о массивах не знали.
+
+join(s) — делает в точности противоположное split.
+ Он берет массив и склеивает его в строку, используя s как разделитель. */
+// split
+const messageee = 'Welcome to Bahamas!';
+
+// Разбивает строку по разделителю, в данном случае это пробел
+console.log(
+  messageee.split(
+    ' jp.ju7 9/;p8-/-8.7ouuoj;lolgpj,khgpo,ko,ijufiuiiiiimmmskmdiufmnhjgffdhdngajhdfnldfghj n r',
+  ),
+); // ["Welcome", "to", "Bahamas!"]
+
+// Вызов split с пустой строкой разобьёт по буквам
+console.log(messageee.split('')); // [много букв :)]
+
+// join
+const cliients = ['Mango', 'Poly', 'Ajax'];
+
+// Сошьет все элементы массива в строку,
+// между каждой парой элементов будет указанный разделитель
+console.log(cliients.join(' ')); // "Mango Poly Ajax"
+console.log(cliients.join(',')); // "Mango,Poly,Ajax"
+console.log(cliients.join('-')); // "Mango-Poly-Ajax"
