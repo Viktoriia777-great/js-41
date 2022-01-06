@@ -37,3 +37,33 @@ for (const number of numbers) {
   }
 }
 console.log('Total:', total);
+/*
+ * Напиши скрипт поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ *
+ * - Сначала через for
+ * - Потом через for...of
+ * - Логика break
+ * - Метод includes() с тернарным оператором
+ */
+
+const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+const loginToFind = 'aj4xth3m4n';
+let massage;
+
+// 1 перебрать массив
+// сравнить логины
+// переменная massage
+// вывести сообщения в консоль
+
+// for
+// for (let i = 0; i < logins.length; i += 1) {
+//   console.log(logins[i]);
+//   if (loginToFind === logins[i]) {
+//     massage = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+//   massage = `Пользователь ${loginToFind} не найден.`;
+// }
+// console.log(massage);
