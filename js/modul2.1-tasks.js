@@ -67,3 +67,14 @@ let massage;
 //   massage = `Пользователь ${loginToFind} не найден.`;
 // }
 // console.log(massage);
+
+// for of
+
+for (const login of logins) {
+  if (loginToFind === login) {
+    massage = `Пользователь ${loginToFind} найден.`;
+    break;
+  }
+  massage = massage = `Пользователь ${loginToFind} не найден.`;
+}
+console.log(massage);
