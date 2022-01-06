@@ -70,11 +70,22 @@ let massage;
 
 // for of
 
-for (const login of logins) {
-  if (loginToFind === login) {
-    massage = `Пользователь ${loginToFind} найден.`;
-    break;
-  }
-  massage = massage = `Пользователь ${loginToFind} не найден.`;
-}
+// for (const login of logins) {
+//   if (loginToFind === login) {
+//     massage = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+//   massage = massage = `Пользователь ${loginToFind} не найден.`;
+// }
+// console.log(massage);
+
+//Метод includes() с тернарным оператором
+//const type = age >= 18 ? 'adult' : 'child';
+/*if (redFruits.includes(fruit)) {
+  console.log('It is a red fruit!');
+}*/
+
+massage = logins.includes(loginToFind)
+  ? `Пользователь ${loginToFind} найден.`
+  : `Пользователь ${loginToFind} не найден.`;
 console.log(massage);
