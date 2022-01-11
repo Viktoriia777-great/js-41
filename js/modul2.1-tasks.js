@@ -49,7 +49,7 @@ console.log('Total:', total);
  */
 
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
-const loginToFind = 'aj4xth3m4n';
+const loginToFind = 'j4xth3m4n';
 let massage;
 
 // 1 перебрать массив
