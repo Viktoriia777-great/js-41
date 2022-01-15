@@ -187,3 +187,6 @@ console.log(newString);
 
 // Должно получиться top-10-benefits-of-react-framework
 const title = 'Top 10 benefits of React framework';
+
+const slug = title.toLowerCase().split(' ').join('-');
+console.log(slug);
