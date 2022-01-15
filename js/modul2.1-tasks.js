@@ -139,16 +139,51 @@ console.log('Bignumber:', bigNumber);
  */
 
 const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-let string = '';
+//let string = '';
 
 /*1. переменная строка лет
 2. перебрать через фор
 3. записать новое значение в в строку  */
 
-for (const friend of friends) {
-  console.log(friend);
-  string += friend + ', ';
-}
+// for (const friend of friends) {
+//   //   //console.log(friend);
 
-console.log(string);
+//   string += friend + ', ';
+// }
+// string = string.slice(0, string.length - 1);
+// string = string.slice(0, string.length - 1);
+
+// console.log(string);
 console.log(friends.join(', '));
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+const string = 'jAVAsCRIPT';
+const letters = string.split('');
+let newString = '';
+
+//console.log(letters);
+for (const letter of letters) {
+  console.log(letter);
+
+  //   if (letter === letter.toLowerCase()) {
+  //     newString += letter.toUpperCase();
+  //   } else {
+  //     newString += letter.toLowerCase();
+  //   }
+  const isEqual = letter === letter.toLowerCase();
+  newString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+}
+console.log(newString);
+/*
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+const title = 'Top 10 benefits of React framework';
