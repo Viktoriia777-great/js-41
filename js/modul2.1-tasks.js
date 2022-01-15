@@ -130,3 +130,25 @@ for (const number of numbers) {
   }
 }
 console.log('Bignumber:', bigNumber);
+/*
+ * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+ * Элементов может быть произвольное кол-во.
+ * Пусть элементы массива  в строке будут разделены запятой.
+ * - Сначала через for
+ * - Потом через join()
+ */
+
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+let string = '';
+
+/*1. переменная строка лет
+2. перебрать через фор
+3. записать новое значение в в строку  */
+
+for (const friend of friends) {
+  console.log(friend);
+  string += friend + ', ';
+}
+
+console.log(string);
+console.log(friends.join(', '));
