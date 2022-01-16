@@ -190,3 +190,47 @@ const title = 'Top 10 benefits of React framework';
 
 const slug = title.toLowerCase().split(' ').join('-');
 console.log(slug);
+/*
+ * Напиши скрипт который считает сумму элементов двух массивов.
+ */
+
+const array1 = [5, 10, 15, 20];
+const array2 = [10, 20, 30];
+let total = 0;
+
+const nuumbers = array1.concat(array2);
+
+for (const nuumber of nuumbers) {
+  total += nuumber;
+}
+
+console.log(total);
+/*
+ * Работем с коллекцией карточек в trello
+ * - Метод splice()
+ * - Удалить
+ * - Добавить
+ * - Обновить
+ */
+
+const cards = ['Карточка-1', 'Карточка-2', 'Карточка-3', 'Карточка-4', 'Карточка-5'];
+
+console.table(cards);
+
+const cardToRemove = 'Карточка-3';
+
+const index = cards.indexOf(cardToRemove);
+cards.splice(index, 1);
+console.table(cards);
+
+// Добавление
+const cardToInsert = 'Карточка-6';
+const iindex = 3;
+cards.splice(iindex, 0, cardToInsert);
+console.table(cards);
+
+//Обновление
+const cardToUpdate = 'Карточка-4';
+const iiindex = cards.indexOf(cardToUpdate);
+cards.splice(iiindex, 1, 'Карточка-44');
+console.table(cards);
