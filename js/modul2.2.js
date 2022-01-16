@@ -88,12 +88,15 @@ logItems(['клавиатура', 'наушники', 'часы']);
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
 const findLogin = function (allLogins, loginToFind) {
-  for (const login of allLogins) {
-    if (login === loginToFind) {
-      return `Пользователь ${loginToFind} найден.`;
-    }
-  }
-  return `Пользователь ${loginToFind} не найден.`;
+  //   for (const login of allLogins) {
+  //     if (login === loginToFind) {
+  //       return `Пользователь ${loginToFind} найден.`;
+  //     }
+  //   }
+  //   return `Пользователь ${loginToFind} не найден.`;
+  return allLogins.includes(loginToFind)
+    ? `Пользователь ${loginToFind} найден.`
+    : `Пользователь ${loginToFind} не найден.`;
 };
 
 console.log(findLogin(logins, 'avocod3r'));
