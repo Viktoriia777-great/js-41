@@ -88,13 +88,12 @@ logItems(['клавиатура', 'наушники', 'часы']);
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
 const findLogin = function (allLogins, loginToFind) {
-  let message = `Пользователь ${loginToFind} не найден.`;
   for (const login of allLogins) {
     if (login === loginToFind) {
-      message = `Пользователь ${loginToFind} найден.`;
+      return `Пользователь ${loginToFind} найден.`;
     }
   }
-  return message;
+  return `Пользователь ${loginToFind} не найден.`;
 };
 
 console.log(findLogin(logins, 'avocod3r'));
