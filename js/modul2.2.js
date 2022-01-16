@@ -33,9 +33,9 @@ fnC();
 /*
  * Посчитать общую сумму покупок в корзине
  */
-const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+//const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
 // 2. переменная тотал до цикла
-let total = 0;
+//let total = 0;
 
 // 1. перебрать массив
 //for (let i = 0; i < cart.length; i += 1) {
@@ -47,8 +47,57 @@ let total = 0;
 //console.log('total:', total);
 
 //for...of
-for (const value of cart) {
-  console.log(value);
-  total += value;
-}
-console.log('total:', total);
+//for (const value of cart) {
+//console.log(value);
+//total += value;
+//}
+//console.log('total:', total);
+const totalPrice = function (items) {
+  let total = 0;
+
+  for (const item of items) {
+    total += item;
+  }
+  return total;
+};
+const result = totalPrice([10, 50, 30]);
+console.log(`Общая сумма покупок: ${result}`);
+const result1 = totalPrice([100, 900, 500]);
+console.log(`Общая сумма покупок: ${result1}`);
+/*
+ * Напиши функцию logItems(items) для перебора и логирования массива
+ */
+const logItems = function (items) {
+  for (const item of items) {
+    console.log(item);
+  }
+};
+
+logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+logItems([1, 2, 3, 4, 5]);
+logItems(['клавиатура', 'наушники', 'часы']);
+/*
+ * Напиши функцию findLogin(allLogins, login) для поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ */
+//massage = logins.includes(loginToFind)
+// ? `Пользователь ${loginToFind} найден.`
+// : `Пользователь ${loginToFind} не найден.`;
+//console.log(massage);
+const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+
+const findLogin = function (allLogins, loginToFind) {
+  let message = `Пользователь ${loginToFind} не найден.`;
+  for (const login of allLogins) {
+    if (login === loginToFind) {
+      message = `Пользователь ${loginToFind} найден.`;
+    }
+  }
+  return message;
+};
+
+console.log(findLogin(logins, 'avocod3r'));
+console.log(findLogin(logins, 'k1widab3st'));
+console.log(findLogin(logins, 'jam4l'));
+console.log(findLogin(logins, 'poly1scute'));
