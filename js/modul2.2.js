@@ -103,3 +103,41 @@ console.log(findLogin(logins, 'avocod3r'));
 console.log(findLogin(logins, 'k1widab3st'));
 console.log(findLogin(logins, 'jam4l'));
 console.log(findLogin(logins, 'poly1scute'));
+
+/*
+const numbers = [51, 18, 13, 24, 7, 85, 19];
+let smallNumber = numbers[0];
+let bigNumber = numbers[0];
+
+for (const number of numbers) {
+  if (number < smallNumber) {
+    smallNumber = number;
+  }
+}
+console.log('Smallnumber:', smallNumber);
+
+for (const number of numbers) {
+  if (number > bigNumber) {
+    bigNumber = number;
+  }
+}
+console.log('Bignumber:', bigNumber);
+*/
+
+/*
+ * Напиши функцию findSmallesNumber(numbers) для поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+const findSmallesNumber = function (numbers) {
+  let smallNumber = numbers[0];
+
+  for (const number of numbers) {
+    if (number < smallNumber) {
+      smallNumber = number;
+    }
+    return `Smallnumber: ${smallNumber}`;
+  }
+};
+
+console.log(findSmallesNumber([26, 56, 98, 65, 90]));
+console.log(findSmallesNumber([43, 87, 56, 80]));
