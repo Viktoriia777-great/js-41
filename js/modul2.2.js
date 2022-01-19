@@ -168,9 +168,14 @@ const changeCase = function (string) {
   let newString = '';
   const letters = string.split('');
   for (const letter of letters) {
-    const isEqual = letter === letter.toLowerCase();
-    newString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+    const isInLowerCase = letter === letter.toLowerCase();
+    newString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase();
   }
   return newString;
 };
 console.log(changeCase('jAVAsCRIPT'));
+console.log(changeCase('ТТрПАвЕЕк'));
+/*
+ * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
+ * Строка состоит только из букв и пробелов
+ */

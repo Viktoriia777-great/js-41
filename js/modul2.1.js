@@ -167,11 +167,8 @@ join(s) — делает в точности противоположное spli
 const messageee = 'Welcome to Bahamas!';
 
 // Разбивает строку по разделителю, в данном случае это пробел
-console.log(
-  messageee.split(
-    ' jp.ju7 9/;p8-/-8.7ouuoj;lolgpj,khgpo,ko,ijufiuiiiiimmmskmdiufmnhjgffdhdngajhdfnldfghj n r',
-  ),
-); // ["Welcome", "to", "Bahamas!"]
+console.log(messageee.split(' '));
+// ["Welcome", "to", "Bahamas!"]
 
 // Вызов split с пустой строкой разобьёт по буквам
 console.log(messageee.split('')); // [много букв :)]
