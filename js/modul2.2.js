@@ -141,3 +141,36 @@ const findSmallesNumber = function (numbers) {
 
 console.log(findSmallesNumber([26, 56, 98, 65, 90]));
 console.log(findSmallesNumber([43, 87, 56, 80]));
+/*
+ * Напиши функцию changeCase(string) которая заменяет регистр
+ * каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+// const string = 'jAVAsCRIPT';
+// const letters = string.split('');
+// let newString = '';
+
+// //console.log(letters);
+// for (const letter of letters) {
+//   console.log(letter);
+
+//   //   if (letter === letter.toLowerCase()) {
+//   //     newString += letter.toUpperCase();
+//   //   } else {
+//   //     newString += letter.toLowerCase();
+//   //   }
+//   const isEqual = letter === letter.toLowerCase();
+//   newString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+// }
+// console.log(newString);
+
+const changeCase = function (string) {
+  let newString = '';
+  const letters = string.split('');
+  for (const letter of letters) {
+    const isEqual = letter === letter.toLowerCase();
+    newString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+  }
+  return newString;
+};
+console.log(changeCase('jAVAsCRIPT'));
