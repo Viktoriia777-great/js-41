@@ -179,3 +179,52 @@ console.log(changeCase('ТТрПАвЕЕк'));
  * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
  * Строка состоит только из букв и пробелов
  */
+// const title = 'Top 10 benefits of React framework';
+
+// const slug = title.toLowerCase().split(' ').join('-');
+// console.log(slug);
+const slugify = function (string) {
+  return string.toLowerCase().split(' ').join('-');
+};
+console.log(slugify('Top 10 benefits of React framework'));
+/*
+ * Псевдомассив arguments и Array.from и ...
+ */
+
+// const fn = function () {
+//   console.log(arguments);
+
+//   const args = Array.from(arguments);
+
+//   console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+const fn = function (a, b, c, ...args) {
+  console.log(`${a} ${b} ${c}`);
+  console.log([a, b, c]);
+  console.log(args);
+};
+
+fn('hello', 1, 2, 3);
+fn('aloha', 1, 2, 3, 4, 5);
+fn('hi', 1, 2, 3, 4, 5, 6, 7);
+fn(6, 8);
+/*
+ * Напиши функцию add для сложения произвольного количества аргументов (чисел)
+ * - Операция ... (rest)
+ */
+const add = function (...args) {
+  console.log(args);
+  let total = 0;
+  for (const arg of args) {
+    total += arg;
+  }
+  return total;
+};
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 4, 5, 6));
