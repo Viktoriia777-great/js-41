@@ -234,3 +234,17 @@ const cardToUpdate = 'Карточка-4';
 const iiindex = cards.indexOf(cardToUpdate);
 cards.splice(iiindex, 1, 'Карточка-44');
 console.table(cards);
+
+// Предположим, что у вас есть массив с названиями цветов в виде строк.
+const colors = ['red', 'green', 'blue'];
+
+// Следующая операция помещает один новый элемент перед вторым элементом.
+colors.splice(2, 0, 'purple');
+
+// Теперь массив цветов содержит четыре элемента
+// с новым элементом, вставленным во вторую позицию.
+console.log(colors); // ["red", "green", "purple", "blue"]
+
+// Вы можете вставить более одного элемента, передав четвертый, пятый аргумент и т. д.
+colors.splice(1, 0, 'yellow', 'pink');
+console.log(colors);
