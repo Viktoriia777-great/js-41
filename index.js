@@ -9,5 +9,6 @@
 //import './js/branching-operators.js';
 //import './js/modul1.2.js';
 //import './js/modul2.1.js';
-import './js/modul2.1-tasks.js';
+//import './js/modul2.1-tasks.js';
 //import './js/modul2.2.js';
+import './js/modul3.1.js';
