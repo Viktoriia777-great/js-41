@@ -13,20 +13,20 @@ console.log('ОБЪЕКТЫ');
 //   trackCount: 3,
 // };
 
-// console.log(playlist);
+//console.log(playlist);
 
-// const fn = function (myObject) {
-//   // myObject = { a: 1, b: 2 }
-//   console.log(myObject);
-// };
+const fn = function (myObject) {
+  //myObject = { a: 1, b: 2 };
+  console.log(myObject);
+};
 
-// fn({ a: 1, b: 2 });
+fn({ a: 1, b: 2 });
 
-// const rtfm = function () {
-//   return { a: 5 };
-// };
+const rtfm = function () {
+  return { a: 5 };
+};
 
-// console.log(rtfm());
+console.log(rtfm());
 
 /*
  * Доступ к свойству
@@ -109,19 +109,19 @@ console.log(colorPickerData);
  * Массивы и функции это объекты
  */
 
-const a = [1, 2, 3];
+// const a = [1, 2, 3];
 
-a.hello = ':)';
+// a.hello = ':)';
 
-console.log(a);
+// console.log(a);
 
-const fn = function () {
-  //console.log('hello');
-};
+// const fn = function () {
+//   //console.log('hello');
+// };
 
-fn.hello = ';)';
+// fn.hello = ';)';
 
-console.dir(fn.hello);
+// console.dir(fn.hello);
 /*
  * Методы объекта и this при обращении к свойствам в методах
  *
@@ -344,3 +344,7 @@ const getFriendByOnLineStatus = function (allFriends) {
   return friendByStatus;
 };
 console.log(getFriendByOnLineStatus(friends));
+const houses = ['Arryn', 'Frey', 'Greyjoy', 'Stark', 'Lannister', 'Tyrell'];
+const housesInDebt = [...houses.slice(0, 4), ...houses.slice(5)];
+
+console.log(housesInDebt); // ['Arryn','Frey','Greyjoy','Stark','Tyrell']
