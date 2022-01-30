@@ -35,8 +35,17 @@ const cart = {
       }
     }
   },
-  clear() {},
-  countTotalPrice() {},
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    const { items } = this;
+    let total = 0;
+    for (const { price } of items) {
+      total += price;
+    }
+    return total;
+  },
   increaseQuantity(productName) {},
   decreaseQuantity(productName) {},
 };
@@ -53,10 +62,13 @@ cart.add({ name: '🍓', price: 110 });
 console.table(cart.getItems());
 
 cart.remove('🍋');
+//cart.remove('🍇');
 console.table(cart.getItems());
 
-// cart.clear();
-// console.table(cart.getItems());
+console.log('Total: ', cart.countTotalPrice());
+
+cart.clear();
+console.log(cart.getItems());
 
 // cart.increaseQuantity('🍎');
 // console.table(cart.getItems());
