@@ -23,7 +23,8 @@ const cart = {
   add(product) {
     this.items.push(product);
   },
-  remove(productName) {
+  remove(productName) {},
+  /*remove(productName) {
     const { items } = this;
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];
@@ -34,7 +35,7 @@ const cart = {
         items.splice(i, 1);
       }
     }
-  },
+  },*/
   clear() {
     this.items = [];
   },
@@ -54,15 +55,18 @@ const cart = {
 
 cart.add({ name: '🍎', price: 50 });
 cart.add({ name: '🍇', price: 70 });
+cart.add({ name: '🍇', price: 70 });
+cart.add({ name: '🍇', price: 70 });
 cart.add({ name: '🍋', price: 60 });
-//cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍋', price: 60 });
 cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 console.table(cart.getItems());
 
 cart.remove('🍋');
-//cart.remove('🍇');
+cart.remove('🍇');
 console.table(cart.getItems());
 
 console.log('Total: ', cart.countTotalPrice());
