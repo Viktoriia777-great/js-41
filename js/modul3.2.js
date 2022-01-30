@@ -17,9 +17,24 @@ console.log('операция spred, дестркктуризация и опе�
 
 const cart = {
   items: [],
-  getItems() {},
-  add(product) {},
-  remove(productName) {},
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  remove(productName) {
+    const { items } = this;
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i];
+
+      if (productName === item.name) {
+        console.log('Yes:', productName);
+        console.log('index:', i);
+        items.splice(i, 1);
+      }
+    }
+  },
   clear() {},
   countTotalPrice() {},
   increaseQuantity(productName) {},
@@ -29,14 +44,16 @@ const cart = {
 // console.table(cart.getItems());
 
 cart.add({ name: '🍎', price: 50 });
+cart.add({ name: '🍇', price: 70 });
 cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍋', price: 60 });
+//cart.add({ name: '🍋', price: 60 });
 cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+console.table(cart.getItems());
 
-// console.table(cart.getItems());
-
-cart.remove('🍎');
-// console.table(cart.getItems());
+cart.remove('🍋');
+console.table(cart.getItems());
 
 // cart.clear();
 // console.table(cart.getItems());
@@ -75,7 +92,7 @@ console.log(c);*/
  * - Имя переменной отличное от имени свойства
  */
 
-const playlist = {
+/*const playlist = {
   name: 'Мой супер плейлист',
   rating: 5,
   tracks: ['трек-1', 'трек-2', 'трек-3'],
@@ -87,13 +104,13 @@ tracks.push('qwerty');
 console.log(tracks);
 console.log(numberOfTracks);
 console.log(rating);
-console.log(author);
+console.log(author);*/
 
 /*
  * Глубокая деструктуризация
  */
 
-const profile = {
+/*const profile = {
   names: 'Jacques Gluke',
   tag: 'jgluke',
   location: 'Ocho Rios, Jamaica',
@@ -113,4 +130,4 @@ const {
   stats: { followers, views, likes },
 } = profile;
 
-console.log(names, tag, location, avatar, followers, views, likes);
+console.log(names, tag, location, avatar, followers, views, likes);*/
