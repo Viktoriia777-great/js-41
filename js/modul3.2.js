@@ -72,7 +72,19 @@ const cart = {
     }
     return total;
   },
-  increaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    const { items } = this;
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i];
+      console.log(item);
+      if (productName === item.name) {
+        console.log('index:', i);
+        item.quantity += 1;
+
+        return;
+      }
+    }
+  },
   decreaseQuantity(productName) {},
 };
 
@@ -96,17 +108,15 @@ console.table(cart.getItems());
 
 console.log('Total: ', cart.countTotalPrice());
 
-cart.clear();
-console.log(cart.getItems());
-
-// cart.increaseQuantity('🍎');
-// console.table(cart.getItems());
+cart.increaseQuantity('🍎');
+console.table(cart.getItems());
 
 // cart.decreaseQuantity('🍋');
 // cart.decreaseQuantity('🍋');
 // console.table(cart.getItems());
 
-// console.log('Total: ', cart.countTotalPrice());
+//cart.clear();
+//console.log(cart.getItems());
 /*
  * Распыление объектов
  * - Object.prototype.assign() и spread
