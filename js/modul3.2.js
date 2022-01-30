@@ -23,7 +23,18 @@ const cart = {
   add(product) {
     this.items.push(product);
   },
-  remove(productName) {},
+  remove(productName) {
+    for (let i = 0; i < this.items.length; i += 1) {
+      const item = this.items[i];
+      //console.log(item);
+      if (productName === item.name) {
+        console.log('Yes:', productName);
+        console.log('index:', i);
+        this.items.splice(i, 1);
+        return;
+      }
+    }
+  },
   /*remove(productName) {
     const { items } = this;
     for (let i = 0; i < items.length; i += 1) {
