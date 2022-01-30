@@ -21,9 +21,22 @@ const cart = {
     return this.items;
   },
   add(product) {
-    this.items.push(product);
+    //console.table(this.items);
+    for (const item of this.items) {
+      if (item.name === product.name) {
+        //console.log('такой продукт уже есть:', product.name);
+        //console.log(item);
+        item.quantity += 1;
+        return;
+      }
+    }
+    const newProdukt = {
+      ...product,
+      quantity: 1,
+    };
+    this.items.push(newProdukt);
   },
-  remove(productName) {
+  /*remove(productName) {
     for (let i = 0; i < this.items.length; i += 1) {
       const item = this.items[i];
       //console.log(item);
@@ -34,8 +47,8 @@ const cart = {
         return;
       }
     }
-  },
-  /*remove(productName) {
+  },*/
+  remove(productName) {
     const { items } = this;
     for (let i = 0; i < items.length; i += 1) {
       const item = items[i];
@@ -44,17 +57,18 @@ const cart = {
         console.log('Yes:', productName);
         console.log('index:', i);
         items.splice(i, 1);
+        //return;
       }
     }
-  },*/
+  },
   clear() {
     this.items = [];
   },
   countTotalPrice() {
     const { items } = this;
     let total = 0;
-    for (const { price } of items) {
-      total += price;
+    for (const { price, quantity } of items) {
+      total += price * quantity;
     }
     return total;
   },
@@ -76,7 +90,7 @@ cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 console.table(cart.getItems());
 
-cart.remove('🍋');
+//cart.remove('🍋');
 cart.remove('🍇');
 console.table(cart.getItems());
 
