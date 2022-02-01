@@ -73,24 +73,42 @@ const cart = {
     return total;
   },
   increaseQuantity(productName) {
-    //const { items } = this;
-    //for (let i = 0; i < items.length; i += 1) {
-    // const item = items[i];
-    // console.log(item);
-    //if (productName === item.name) {
-    //   console.log('index:', i);
-    //   item.quantity += 1;
-    //  return;
-    //}
-    //}
-    for (const item of this.items) {
+    const { items } = this;
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i];
+      console.log(item);
       if (productName === item.name) {
+        console.log('index:', i);
         item.quantity += 1;
         return;
       }
     }
+    /*for (const item of this.items) {
+      if (productName === item.name) {
+        item.quantity += 1;
+        return;
+      }
+    }*/
   },
-  decreaseQuantity(productName) {},
+  decreaseQuantity(productName) {
+    /* const { items } = this;
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i];
+      console.log(item);
+      if (productName === item.name) {
+        console.log('index;', i);
+        item.quantity -= 1;
+        return;
+      }
+    }*/
+
+    for (const item of this.items) {
+      if (productName === item.name) {
+        item.quantity -= 1;
+        return;
+      }
+    }
+  },
 };
 
 // console.table(cart.getItems());
@@ -118,12 +136,12 @@ cart.increaseQuantity('🍓');
 cart.increaseQuantity('🍋');
 console.table(cart.getItems());
 
-// cart.decreaseQuantity('🍋');
-// cart.decreaseQuantity('🍋');
-// console.table(cart.getItems());
+cart.decreaseQuantity('🍓');
+cart.decreaseQuantity('🍋');
+console.table(cart.getItems());
 
-//cart.clear();
-//console.log(cart.getItems());
+cart.clear();
+console.log(cart.getItems());
 /*
  * Распыление объектов
  * - Object.prototype.assign() и spread
