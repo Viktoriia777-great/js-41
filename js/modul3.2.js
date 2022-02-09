@@ -207,3 +207,12 @@ const {
 } = profile;
 
 console.log(names, tag, location, avatar, followers, views, likes);*/
+const maht = {
+  sum: function (a, b) {
+    return a + b;
+  },
+
+  //sumStr: 'sum',
+};
+
+console.log(maht.sum(1, 5));
