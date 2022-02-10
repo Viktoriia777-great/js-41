@@ -66,27 +66,49 @@ console.log(calcTotalPrice(stones, 'www'));
 например calcTotalPrice(stonesObject, 'emerald') выведет в консоль 5200.
 Подумайте что может пойти не так во время выполнения вашей функции и выведите
 в консоль ошибки.*/
+
+/*const stonesObjectValue = Object.values(stonesObject);
+const stonesObjectKeys = Object.keys(stonesObject);
+const stonesObjectEntries = Object.entries(stonesObject);
+const stonesObjectRest = {
+  ...stonesObject,
+};
+console.log(stonesObject);
+console.log(stonesObjectValue);
+console.log(stonesObjectKeys);
+console.log(stonesObjectEntries);
+console.log(stonesObjectRest);*/
+
+const calcTotalPrices = (stones, stoneName) => {
+  // 1-й способ
+  const stone = stones[stoneName];
+  if (stone) {
+    return stone.price * stone.quantity;
+  }
+  // 2-й способ
+  if (stones.hasOwnProperty(stoneName)) {
+    return stones[stoneName].price * stones[stoneName].quantity;
+  }
+  // 3-й способ
+  if (stoneName in stones) {
+    return stones[stoneName].price * stones[stoneName].quantity;
+  }
+  return 'No such stone!';
+};
+
 const stonesObject = {
   emerald: { price: 1300, quantity: 4 },
   diamond: { price: 2700, quantity: 3 },
   sapphire: { price: 400, quantity: 7 },
   crushedStone: { price: 200, quantity: 2 },
 };
-
-const stonesObjectValue = Object.values(stonesObject);
-const stonesObjectKeys = Object.keys(stonesObject);
-const stonesObjectEntries = Object.entries(stonesObject);
-
-console.log(stonesObjectValue);
-console.log(stonesObjectKeys);
-console.log(stonesObjectEntries);
-
-const calcTotalPrices = (stones, stoneName) => {
-  console.log('not implemented');
-};
-
 console.log(calcTotalPrices(stonesObject, 'emerald')); // 5200
-
+console.log(calcTotalPrices(stonesObject, 'diamond'));
+console.log(calcTotalPrices(stonesObject, 'sapphire'));
+console.log(calcTotalPrices(stonesObject, 'crushedStone'));
+console.log(calcTotalPrices(stonesObject, 'www'));
+console.log(calcTotalPrices(stonesObject, ''));
+console.log(calcTotalPrices([], '123'));
 const hotel = {
   name: 'Resort Hotel',
   stars: 5,
