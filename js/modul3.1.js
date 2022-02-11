@@ -254,23 +254,24 @@ const friends = [
   { name: 'Poly', online: true },
   { name: 'Ajax', online: false },
 ];
-/*
+
 friends[0].newfriend = 777;
 friends[1].newfriend = 111;
 friends[2].newfriend = 222;
 friends[3].newfriend = 333;
 
 console.table(friends);
+
 for (const friend of friends) {
   console.log(friend);
   friend.newprop = 555;
-}*/
+}
 console.table(friends);
 /*
  * Ищем друга по имени
  */
 const findFriendByName = function (allFriends, friendName) {
-  for (const friend of friends) {
+  for (const friend of allFriends) {
     console.log(friend.name);
     if (friend.name === friendName) {
       return 'Нашли :)';
