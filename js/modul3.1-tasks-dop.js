@@ -9,7 +9,7 @@ const salaries = {
 
 const valuess = Object.values(salaries);
 console.log(valuess);
-
+// 1-й способ
 let minSalaries = valuess[0];
 let maxSalaries = valuess[0];
 let totall = 0;
@@ -28,7 +28,7 @@ console.log('min:', minSalaries);
 console.log('max:', maxSalaries);
 
 console.log('total:', totall);
-
+// 2-й способ
 console.log('Math.min:', Math.min(...valuess));
 console.log('Math.max:', Math.max(...valuess));
 /**
@@ -86,13 +86,13 @@ const calcTotalPrices = (stones, stoneName) => {
     return stone.price * stone.quantity;
   }
   // 2-й способ
-  if (stones.hasOwnProperty(stoneName)) {
+  /* if (stones.hasOwnProperty(stoneName)) {
     return stones[stoneName].price * stones[stoneName].quantity;
   }
   // 3-й способ
   if (stoneName in stones) {
     return stones[stoneName].price * stones[stoneName].quantity;
-  }
+  }*/
   return 'No such stone!';
 };
 
@@ -121,3 +121,43 @@ const hotel = {
  */
 const entries = Object.entries(hotel);
 console.log(entries);
+
+const a = { x: 1, y: 2 };
+const b = a;
+b.c = 3;
+a.f = 5;
+console.log(a);
+console.log(b);
+/*
+ * Методы объекта и this при обращении к свойствам в методах
+ *
+ * http://fecore.net.ua/books/m5ph3r-javascript/module-03/images/context.jpg
+ *
+ * - changeName
+ * - addTrack
+ * - updateRating
+ * - getTrackCount
+ */
+const playlist = {
+  name: 'Мой супер плейлист',
+  rating: 5,
+  tracks: ['трек-1', 'трек-2', 'трек-3'],
+  trackCount: 3,
+  changeName(newName) {
+    this.name = newName;
+  },
+  addTrack(newTrack) {
+    this.tracks.push(newTrack);
+  },
+  updateRating(newRating) {
+    this.rating = newRating;
+  },
+  getTrackCount() {
+    return this.tracks.length;
+  },
+};
+playlist.changeName('New name');
+playlist.addTrack('new track');
+playlist.updateRating(10);
+console.log(playlist.getTrackCount());
+console.log(playlist);
