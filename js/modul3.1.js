@@ -305,7 +305,7 @@ const getOnLineFriends = function (allFriends) {
     console.log(friend.online);
 
     if (friend.online) {
-      onLineFriends.push(friend);
+      onLineFriends.push(friend.name);
     }
   }
   return onLineFriends;
@@ -340,6 +340,11 @@ const getFriendByOnLineStatus = function (allFriends) {
       continue;
     }
     friendByStatus.offline.push(friend);
+
+    /*friend.online ? friendByStatus.online.push(friend) : friendByStatus.offline.push(friend);
+
+    const key = friend.online ? 'online' : 'offline';
+    friendByStatus[key].push(friend);*/
   }
 
   return friendByStatus;

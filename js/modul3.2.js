@@ -207,6 +207,75 @@ const {
 } = profile;
 
 console.log(names, tag, location, avatar, followers, views, likes);*/
+
+// деструктуризация массивов
+const rgb = [255, 100, 80];
+const [red, green, blue] = rgb;
+const [a, , c] = rgb;
+console.log(red, green, blue);
+console.log(a, c);
+
+const autors = {
+  kiwi: 4,
+  poly: 7,
+  ajaxs: 9,
+  mango: 6,
+};
+const entries = Object.entries(autors);
+let maxRating;
+
+// 3
+for (const [naame, rating] of entries) {
+  //console.log(enrty);
+  // 2
+  //const [naame, rating] = enrty;
+  // 1
+  /*const naame = enrty[0];
+  const rating = enrty[1];*/
+  //console.log(naame, rating);
+  console.log(naame, rating);
+}
+const calcTotalPrices = (stones, stoneName) => {
+  // 1-й способ
+  const stone = stones[stoneName];
+  if (stone) {
+    return stone.price * stone.quantity;
+  }
+  // 2-й способ
+  /* if (stones.hasOwnProperty(stoneName)) {
+    return stones[stoneName].price * stones[stoneName].quantity;
+  }
+  // 3-й способ
+  if (stoneName in stones) {
+    return stones[stoneName].price * stones[stoneName].quantity;
+  }*/
+  return 'No such stone!';
+};
+
+const stonesObject = {
+  emerald: { price: 1300, quantity: 4 },
+  diamond: { price: 2700, quantity: 3 },
+  sapphire: { price: 400, quantity: 7 },
+  crushedStone: { price: 200, quantity: 2 },
+};
+console.log(calcTotalPrices(stonesObject, 'emerald')); // 5200
+const numbers = [51, 18, 13, 24, 7, 85, 19];
+let smallNumber = numbers[0];
+let bigNumber = numbers[0];
+
+for (const number of numbers) {
+  if (number < smallNumber) {
+    smallNumber = number;
+  }
+}
+console.log('Smallnumber:', smallNumber);
+
+for (const number of numbers) {
+  if (number > bigNumber) {
+    bigNumber = number;
+  }
+}
+console.log('Bignumber:', bigNumber);
 const maht = {
   sum: function (a, b) {
     return a + b;
