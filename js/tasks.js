@@ -52,14 +52,14 @@ console.log(`Операция завершена`);
  * «Оформляем заказ на сумму [сумма] со скидкой [скидка]%»
  */
 
-const totalSpent = 10000;
+const totalSpent = 20000;
 let payments = 500;
 let discount = 0;
 
-if (totalSpent >= 100 || totalSpent < 1000) {
+if (totalSpent >= 100 && totalSpent < 1000) {
   discount = 0.02;
   console.log('Бронзовый партнер, скидка 2%');
-} else if (totalSpent >= 1000 || totalSpent < 5000) {
+} else if (totalSpent >= 1000 && totalSpent < 5000) {
   discount = 0.05;
   console.log('Серебрянный партнер, скидка 5%');
 } else if (totalSpent >= 5000) {
@@ -86,22 +86,41 @@ console.log(
  */
 // переменная stsrs
 // конструкция  switch
-const stars = 10;
+const stars = 50;
 let price;
+
+if (stars === 1) {
+  price = 20;
+} else if (stars === 2) {
+  price = 30;
+} else if (stars === 3) {
+  price = 50;
+} else if (stars === 4) {
+  price = 70;
+} else if (stars === 5) {
+  price = 120;
+} else {
+  console.log('Такого кол-ва звезд нет');
+}
+console.log(price);
 
 switch (stars) {
   case 1:
     price = 20;
     break;
+
   case 2:
     price = 30;
     break;
+
   case 3:
     price = 50;
     break;
+
   case 4:
     price = 70;
     break;
+
   case 5:
     price = 120;
     break;
@@ -115,7 +134,41 @@ console.log(price);
  * Напиши скрипт выбора стоимости отеля по кол-ву звёзд.
  * 1,2 - 20$, 3,4 - 30$, 5 - 120$
  */
+// star, prices
+// через if
+// через switch
+const star = 4;
+let prices;
 
+if (star === 1 || star === 2) {
+  prices = 20;
+} else if (star === 3 || star === 4) {
+  prices = 30;
+} else if (star === 5) {
+  prices = 120;
+} else {
+  console.log('Такого кол-ва звезд нет');
+}
+
+switch (star) {
+  case 1:
+  case 2:
+    prices = 20;
+    break;
+
+  case 3:
+  case 4:
+    prices = 30;
+    break;
+
+  case 5:
+    prices = 120;
+    break;
+  default:
+    console.log('Такого кол-ва звезд нет');
+}
+
+console.log(prices);
 /*
  * Напиши скрипт выбора опции доставки товара.
  * Опция хранится в переменной option: 1 - самовывоз, 2 - курьер, 3 - почта
@@ -126,6 +179,39 @@ console.log(price);
  * - 'Посылка будет отправлена сегодня'
  * - 'Вам перезвонит менеджер'
  */
+// option, message,
+// if
+// switch
+
+const option = 7;
+let message;
+if (option === 1) {
+  message = 'Вы сможете забрать товар завтра с 12:00 в нашем офисе';
+} else if (option === 2) {
+  message = 'Курьер доставит заказ завтра с 9:00 до 18:00';
+} else if (option === 3) {
+  message = 'Посылка будет отправлена сегодня';
+} else {
+  message = 'Вам перезвонит менеджер';
+}
+console.log(message);
+
+switch (option) {
+  case 1:
+    message = 'Вы сможете забрать товар завтра с 12:00 в нашем офисе';
+    break;
+
+  case 2:
+    message = 'Курьер доставит заказ завтра с 9:00 до 18:00';
+    break;
+
+  case 3:
+    message = 'Посылка будет отправлена сегодня';
+    break;
+
+  default:
+    message = 'Вам перезвонит менеджер';
+}
 
 /*
  * Напиши скрипт который подсчитывает общую сумму зарплат работников.
@@ -133,3 +219,42 @@ console.log(price);
  * Зарплата каждого работника это случайное число от 500 до 5000
  * Записать сумму в переменную totalSalary и вывести в консоль
  */
+//employees,totalSalary, salary
+//перебор через  i
+//сгенерить случайную з\п
+//
+const employees = 4;
+const minSalary = 500;
+const maxSalary = 5000;
+let totalSalary = 0;
+
+for (let i = 1; i <= employees; i += 1) {
+  const salary = Math.round(Math.random() * maxSalary - minSalary) + minSalary;
+  console.log(`ЗП работника ${i} - ${salary}`);
+
+  totalSalary += salary;
+}
+console.log('totalSalary:', totalSalary);
+/*
+ * Напиши скрипт который подсчитывает сумму всех чётных чисел,
+ * которые входят диапазон чисел в переменных от min до max.
+ * Например, если min=0 и max=5, то диапазон 0-5, и в нём два чётных числа - 2 и 4, их сумма 6.
+ */
+
+//  1 вары
+const min = 1;
+const max = 5;
+let total = 0;
+// перебор в фор числа от мин до мах
+// найти четные
+// вычмслить тотал и сделать лог
+
+for (let i = min; i <= max; i += 1) {
+  if (i % 2 !== 0) {
+    continue;
+  }
+  console.log('Чётное:', i);
+  total += i;
+}
+
+console.log('Total:', total);
