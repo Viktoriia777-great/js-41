@@ -222,19 +222,25 @@ const autors = {
   mango: 6,
 };
 const entries = Object.entries(autors);
-let maxRating;
-
+//console.log(entries);
+let bigRating;
+/*
 // 3
 for (const [naame, rating] of entries) {
   //console.log(enrty);
   // 2
   //const [naame, rating] = enrty;
   // 1
-  /*const naame = enrty[0];
-  const rating = enrty[1];*/
-  //console.log(naame, rating);
+  const naame = enrty[0];
+  const rating = enrty[1];
   console.log(naame, rating);
+}*/
+for (const entry of entries) {
+  console.log(entry);
+  const naame = entry[0];
+  const rating = entry[1];
 }
+
 const calcTotalPrices = (stones, stoneName) => {
   // 1-й способ
   const stone = stones[stoneName];
@@ -285,3 +291,4 @@ const maht = {
 };
 
 console.log(maht.sum(1, 5));
+console.log(Boolean(' '));
