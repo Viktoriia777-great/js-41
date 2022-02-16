@@ -21,14 +21,14 @@ console.log(
   `Общая стоимость заказа ${payment} кредитов. Проверяем кол-во доступных средств на счету`,
 );
 
-/*if (balance > payment) {
+/*if (balance >= payment) {
   console.log(`На счету осталось ${balance - payment} кредитов`);
 } else {
   console.log('На счету недостаточно средств для проведения операции!');
 }*/
 
 console.log(
-  balance > payment
+  balance >= payment
     ? `На счету осталось ${balance - payment} кредитов`
     : 'На счету недостаточно средств для проведения операции!',
 );
