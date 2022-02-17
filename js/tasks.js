@@ -341,7 +341,7 @@ alert(`Общая сумма чисел равна ${totalll}`);*/
 Проверяет сможет ли пользователь оплатить заказ:
 если сумма к оплате превышает количество кредитов на счету, выводи в консоль сообщение 'Недостаточно средств на счету!'.
 в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'.*/
-let input = prompt();
+/*let input = prompt();
 const credits = 1000;
 const pricePerDroid = 10;
 let quantity = input;
@@ -357,7 +357,7 @@ if (prompt() === null) {
   mesage = `Вы купили ${quantity} дроидов, на счету осталось ${credits - totalPrice} кредитов`;
 }
 //console.log(mesage);
-alert(mesage);
+alert(mesage);*/
 
 /*Пользователь может оформить доставку товара к себе в страну, указав ее при посещении страницы в prompt.
 Учти, пользователь может ввести имя страны не только буквами нижнего регистра, а к примеру 'кИтАЙ'.
@@ -374,3 +374,39 @@ alert(mesage);
 Австралия - 170 кредитов
 Индия - 80 кредитов
 Ямайка - 120 кредитов*/
+let input = prompt().toLowerCase();
+let country = input;
+
+let priceCountry;
+let messageCountry;
+
+switch (country) {
+  case `china`:
+    priceCountry = 100;
+    messageCountry = `Доставка в ${country} будет стоить ${priceCountry} кредитов`;
+    break;
+
+  case `chile`:
+    priceCountry = 250;
+    messageCountry = `Доставка в ${country} будет стоить ${priceCountry} кредитов`;
+    break;
+
+  case `australia`:
+    priceCountry = 170;
+    messageCountry = `Доставка в ${country} будет стоить ${priceCountry} кредитов`;
+    break;
+
+  case `indiay`:
+    priceCountry = 80;
+    messageCountry = `Доставка в ${country} будет стоить ${priceCountry} кредитов`;
+    break;
+
+  case `jamaica`:
+    priceCountry = 120;
+    messageCountry = `Доставка в ${country} будет стоить ${priceCountry} кредитов`;
+    break;
+
+  default:
+    console.log('В вашей стране доставка не доступна');
+}
+console.log(alert(messageCountry));
