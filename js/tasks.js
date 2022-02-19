@@ -374,7 +374,7 @@ alert(mesage);*/
 Австралия - 170 кредитов
 Индия - 80 кредитов
 Ямайка - 120 кредитов*/
-let input = prompt().toLowerCase();
+/*let input = prompt().toLowerCase();
 let country = input;
 
 let priceCountry;
@@ -409,4 +409,24 @@ switch (country) {
   default:
     console.log('В вашей стране доставка не доступна');
 }
-console.log(alert(messageCountry));
+console.log(alert(messageCountry));*/
+/*Напиши функцию logItems(array), которая получает массив и использует цикл for, который для каждого элемента массива будет выводить в консоль
+ сообщение в формате [номер элемента] - [значение элемента].
+
+Нумерация должна начинаться с 1. К примеру для первого элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено 
+'1 - Mango', а для индекса 2 выведет '3 - Ajax'.*/
+let messagers;
+const logItems = function (array) {
+  for (let i = 0; i < array.length; i += 1) {
+    const num = Number(i) + 1;
+    messagers = `${num}-${array[i]}`;
+    console.log(messagers);
+  }
+};
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
