@@ -491,3 +491,31 @@ console.log(findLongestWord('May the force be with you')); // 'force'
 //     }
 //   }
 // };
+/*Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
+
+Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет в конец строки троеточие '...',
+после чего возвращает укороченную версию.*/
+const formatString = function (string, length) {
+  const substring = string.slice(0, length);
+
+  if (string.length > length) {
+    return substring + '...';
+  }
+  return substring;
+};
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(formatString('Curabitur ligula sapien, tincidunt non.', 40));
+// вернется оригинальная строка
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 40));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.', 40));
+// вернется оригинальная строка
+
+console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.', 40));
+// вернется форматированная строка
