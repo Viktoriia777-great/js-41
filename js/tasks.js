@@ -544,3 +544,31 @@ console.log(formatString('Curabitur ligula sapien.'));
 
 console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
 // вернется форматированная строка*/
+/*Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. Функция проверяет ее на содержание слов spam и sale.
+ Если нашли зарещенное слово то функция возвращает true, если запрещенных слов нет функция возвращает false. 
+ Слова в строке могут быть в произвольном регистре.*/
+
+const checkForSpam = function (message) {
+  const normalizedmessage = message.toLowerCase();
+  const blacklistedWord1 = 'spam';
+  const blacklistedWord2 = 'sale';
+
+  if (normalizedmessage.includes(blacklistedWord1)) {
+    return true;
+  }
+  if (normalizedmessage.includes(blacklistedWord2)) {
+    return true;
+  }
+  return false;
+};
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(checkForSpam('Latest technology news')); // false
+
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
+
+console.log(checkForSpam('Get best sale offers now!')); // true
+
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
